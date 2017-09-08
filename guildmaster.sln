@@ -1,7 +1,7 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{2C8EF8DE-24CC-FAB0-B213-88B31B204B76}") = "guildmaster", "Assembly-CSharp.csproj", "{76CBD556-949B-87E5-E047-7C9F3850987B}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guildmaster", "Assembly-CSharp.csproj", "{76CBD556-949B-87E5-E047-7C9F3850987B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

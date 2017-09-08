@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Guild {
-	IList<Character> characters;
+	ArrayList characters;
 	int funds;
 
 	public Guild() {
