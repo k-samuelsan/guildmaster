@@ -2,11 +2,10 @@
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
-	public GameObject week;
-
-	static Guild guild;
+	public static Guild guild;
 	int weekCounter;
 
+	public GameObject week;
 	public GameObject questBoard;
 	public GameObject characterSelect;
 

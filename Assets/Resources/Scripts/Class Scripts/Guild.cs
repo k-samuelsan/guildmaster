@@ -17,5 +17,9 @@ public class Guild {
 		characters.Add (new Character ("sam", Constants.CLASS_Rogue));
 		characters.Add (new Character ("justin", Constants.CLASS_Warrior));
 	}
+
+	public ArrayList getCharacters() {
+		return characters;
+	}
 		
 }
