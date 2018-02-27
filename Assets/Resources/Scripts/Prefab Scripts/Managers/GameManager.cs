@@ -4,15 +4,11 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 	public static Guild guild;
 	int weekCounter;
+    static GameManager gameManager;
 
-	public GameObject week;
+	public GameObject thisWeek;
 	public GameObject questBoard;
 	public GameObject characterSelect;
-
-	public static GameObject thisWeek;
-	public static GameManager gameManager;
-	public static GameObject instQuestBoard;
-	public static GameObject instCharacterSelect;
 
 	// Use this for initialization
 	void Start () {
@@ -20,18 +16,24 @@ public class GameManager : MonoBehaviour {
 		guild = new Guild ();
 		weekCounter = 0;
 		nextTurn ();
-		instQuestBoard = Instantiate (questBoard) as GameObject;
-		instQuestBoard.SetActive (false);
-		instCharacterSelect = Instantiate (characterSelect) as GameObject;
-		instCharacterSelect.SetActive (false);
 	}
 
-	public void nextTurn () {
-		Debug.Log (weekCounter);
-		if (thisWeek) {
-			Destroy (thisWeek);
-		}
-		weekCounter++;
-		thisWeek = Instantiate (week) as GameObject;
-	} 
+	public static void nextTurn () {
+		Debug.Log (gameManager.weekCounter);
+		gameManager.weekCounter++;
+	}
+
+    public static GameManager getInstance() {
+        return gameManager;
+    }
+
+    public static void setCharacterSelect(bool active)
+    {
+        gameManager.characterSelect.SetActive(active);
+    }
+
+    public static void setQuestBoard(bool active)
+    {
+        gameManager.questBoard.SetActive(active);
+    }
 }

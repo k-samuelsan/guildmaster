@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Character {
+    string spriteName;
 	string name;
 	string characterClass;
 	int level;
@@ -12,6 +13,7 @@ public class Character {
 		xp = 0;
 		this.name = name;
 		this.characterClass = characterClass;
+        this.spriteName = "test-sprite";
 	}
 
 	public Character (string name, int level, string characterClass) {
@@ -20,5 +22,9 @@ public class Character {
 		this.name = name;
 		this.characterClass = characterClass;
 	}
+
+    public string getSpriteName() {
+        return spriteName;
+    }
 
 }

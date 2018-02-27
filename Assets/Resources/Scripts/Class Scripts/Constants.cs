@@ -7,5 +7,6 @@ public class Constants {
 	public const string CLASS_Mage = "Mage";
 	public const string CLASS_Rogue = "Rogue";
 
-	public const int NUM_CHARACTERS_PER_CHAR_SELECT_PAGE = 10;
+	public const int NUM_CHARS_PER_PAGE = 10;
+    public const int NUM_CHARS_PER_QUEST = 5;
 }
