@@ -9,13 +9,13 @@ public class Guild {
 	public Guild() {
 		characters = new ArrayList ();
 		funds = 0;
-		makeTestChars ();
+		MakeTestChars ();
 	}
 
-	private void makeTestChars() {
-		characters.Add (new Character ("jerry", Constants.CLASS_Mage));
-		characters.Add (new Character ("sam", Constants.CLASS_Rogue));
-		characters.Add (new Character ("justin", Constants.CLASS_Warrior));
+	private void MakeTestChars() {
+		characters.Add (new Character ("jerry", CharacterClass.getClass(Constants.CLASS_Mage)));
+		characters.Add (new Character ("sam", CharacterClass.getClass(Constants.CLASS_Rogue)));
+		characters.Add (new Character ("justin", CharacterClass.getClass(Constants.CLASS_Warrior)));
 	}
 
 	public ArrayList getCharacters() {

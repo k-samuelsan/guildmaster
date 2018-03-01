@@ -5,18 +5,18 @@ using UnityEngine;
 public class ButtonHandler : MonoBehaviour {
 
     public void ShowQuestBoard() {
-        GameManager.setQuestBoard(true);
+        GameManager.SetQuestBoard(true);
     }
 
     public void HideQuestBoard() {
-        GameManager.setQuestBoard(false);
+        GameManager.SetQuestBoard(false);
     }
 
     public void HideCharacterSelect() {
-        GameManager.setCharacterSelect(false);
+        GameManager.SetCharacterSelect(false);
     }
 
     public void NextTurn() {
-        GameManager.nextTurn();
+        GameManager.GetInstance().NextTurn();
     }
 }

@@ -1,0 +1,21 @@
+[
+  {
+    "id": 0,
+    "name": "Warrior",
+    "sprite": "warrior_sprite"
+
+
+  },
+  {
+    "id": 1,
+    "name": "Rogue",
+    "sprite": "test-sprite"
+
+
+  },
+  {
+    "id": 2,
+    "name": "Mage",
+    "sprite": "mage_sprite"
+  }
+]

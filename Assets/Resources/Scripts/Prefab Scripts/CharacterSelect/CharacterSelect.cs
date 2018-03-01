@@ -7,22 +7,25 @@ public class CharacterSelect : MonoBehaviour {
     public GameObject characterSlot;
 	ArrayList characters;
 	ArrayList characterSlots;
-	int currentPageIdx = 0; //each page holds Const.NUM_CHARS_PER_PAGE characters
+	int currentPageIdx; //each page holds Const.NUM_CHARS_PER_PAGE characters
 
-    void Start() {
+    public void Refresh() {
+        this.characters = null;
         this.characterSlots = new ArrayList();
+        this.currentPageIdx = 0;
         Transform[] children = gameObject.GetComponentsInChildren<Transform>();
         GameObject characterSlotsObject = transform.Find("CharacterSlots").gameObject;
-        for (int i = 0; i < Constants.NUM_CHARS_PER_PAGE; i++) {
+        for (int i = 0; i < Constants.NUM_CHARS_PER_PAGE; i++)
+        {
             GameObject thisSlot = Instantiate(characterSlot) as GameObject;
-            thisSlot.transform.parent = characterSlotsObject.transform;
+            thisSlot.transform.SetParent(characterSlotsObject.transform);
             characterSlots.Add(thisSlot);
         }
-		characters = GameManager.guild.getCharacters ();
-		updateSlots ();
-	}
+        characters = GameManager.guild.getCharacters();
+        UpdateSlots();
+    }
 
-	ArrayList getCharactersFromCurrentPage() {
+	ArrayList GetCharactersFromCurrentPage() {
 		int startIdx = 1 * currentPageIdx;
         int count = Constants.NUM_CHARS_PER_PAGE;
         //if there is less than NUM_CHARS_PER_PAGE on this page, only get that many characters
@@ -32,8 +35,8 @@ public class CharacterSelect : MonoBehaviour {
         return characters.GetRange (startIdx, count);
 	}
 
-	void updateSlots() {
-		ArrayList charactersInPage = getCharactersFromCurrentPage ();
+	void UpdateSlots() {
+		ArrayList charactersInPage = GetCharactersFromCurrentPage ();
         for (int i = 0 ; i < charactersInPage.Count; i++) {
 			Character thisCharacter = (Character) charactersInPage [i];
 			GameObject thisSlot = (GameObject) characterSlots [i];

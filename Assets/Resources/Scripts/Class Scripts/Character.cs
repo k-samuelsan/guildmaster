@@ -3,28 +3,47 @@ using System.Collections;
 
 public class Character {
     string spriteName;
-	string name;
-	string characterClass;
-	int level;
-	int xp;
+    string name;
+    CharacterClass charClass;
+    int level;
+    int xp;
 
-	public Character(string name, string characterClass) {
-		level = 0;
+    public Character(string name, CharacterClass charClass) {
+		level = 1;
 		xp = 0;
 		this.name = name;
-		this.characterClass = characterClass;
-        this.spriteName = "test-sprite";
+        this.charClass = charClass;
+        this.spriteName = charClass.sprite;
 	}
 
-	public Character (string name, int level, string characterClass) {
+	public Character (string name, int level, CharacterClass charClass) {
 		this.level = level;
 		xp = 0;
 		this.name = name;
-		this.characterClass = characterClass;
-	}
+        this.charClass = charClass;
+    }
 
-    public string getSpriteName() {
+    public string GetSpriteName() {
         return spriteName;
+    }
+
+    public string GetName() {
+        return name;
+    }
+
+    public CharacterClass GetClass()
+    {
+        return charClass;
+    }
+
+    public int GetLevel()
+    {
+        return level;
+    }
+
+    public int GetXp()
+    {
+        return xp;
     }
 
 }

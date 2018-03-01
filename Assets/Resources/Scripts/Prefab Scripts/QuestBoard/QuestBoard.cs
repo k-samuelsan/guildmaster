@@ -5,16 +5,17 @@ using UnityEngine;
 public class QuestBoard : MonoBehaviour {
     public GameObject characterSlot;
 	ArrayList characterSlots;
+    public ArrayList characters;
 
-    void Start()
+    public void Refresh()
     {
+        this.characters = new ArrayList();
         this.characterSlots = new ArrayList();
-        Transform[] children = gameObject.GetComponentsInChildren<Transform>();
         GameObject characterSlotsObject = transform.Find("CharacterSlots").gameObject;
         for (int i = 0; i < Constants.NUM_CHARS_PER_QUEST; i++)
         {
             GameObject thisSlot = Instantiate(characterSlot) as GameObject;
-            thisSlot.transform.parent = characterSlotsObject.transform;
+            thisSlot.transform.SetParent(characterSlotsObject.transform);
             characterSlots.Add(thisSlot);
         }
     }

@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour {
 	public static Guild guild;
 	int weekCounter;
     static GameManager gameManager;
+    static JsonManager jsonManager;
 
 	public GameObject thisWeek;
 	public GameObject questBoard;
@@ -13,26 +14,38 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameManager = this;
+        jsonManager = JsonManager.getInstance();
+        jsonManager.init();
 		guild = new Guild ();
 		weekCounter = 0;
-		nextTurn ();
+		NextTurn ();
 	}
 
-	public static void nextTurn () {
+	public void NextTurn () {
 		Debug.Log (gameManager.weekCounter);
 		gameManager.weekCounter++;
+        questBoard.GetComponent<QuestBoard>().Refresh();
+        characterSelect.GetComponent<CharacterSelect>().Refresh();
 	}
 
-    public static GameManager getInstance() {
+    public static GameManager GetInstance() {
         return gameManager;
     }
 
-    public static void setCharacterSelect(bool active)
+    public QuestBoard GetQuestBoard() {
+        return questBoard.GetComponent<QuestBoard>();
+    }
+
+    public CharacterSelect GetCharacterSelect() {
+        return characterSelect.GetComponent<CharacterSelect>();
+    }
+
+    public static void SetCharacterSelect(bool active)
     {
         gameManager.characterSelect.SetActive(active);
     }
 
-    public static void setQuestBoard(bool active)
+    public static void SetQuestBoard(bool active)
     {
         gameManager.questBoard.SetActive(active);
     }
