@@ -14,6 +14,6 @@ public class CharacterClass {
     }
 
     public static CharacterClass getClass(int id) {
-        return JsonManager.getInstance().classDatabase[id];
+        return DataManager.getInstance().classDatabase[id];
     }
 }

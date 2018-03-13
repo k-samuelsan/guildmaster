@@ -1,0 +1,121 @@
+{
+  "ranks": [
+    {
+      "id": 0,
+      "name": "F"
+    },
+    {
+      "id": 1,
+      "name": "E"
+    },
+    {
+      "id": 2,
+      "name": "D"
+    },
+    {
+      "id": 3,
+      "name": "C"
+    },
+    {
+      "id": 4,
+      "name": "B"
+    },
+    {
+      "id": 5,
+      "name": "A"
+    },
+    {
+      "id": 6,
+      "name": "S"
+    },
+    {
+      "id": 7,
+      "name": "SS"
+    }
+  ],
+  "obstacles": [
+    {
+      "id": 0,
+      "name": "Well-Guarded Target"
+    },
+    {
+      "id": 1,
+      "name": "Elusive Quarry"
+    },
+    {
+      "id": 2,
+      "name": "Treacherous Weather"
+    },
+    {
+      "id": 3,
+      "name": "Uncharted Territory"
+    }
+  ],
+  "requiredSkills": [
+    {
+      "id": 0,
+      "name": "Scouting"
+    },
+    {
+      "id": 1,
+      "name": "Combat Expertise"
+    },
+    {
+      "id": 2,
+      "name": "Strategy"
+    },
+    {
+      "id": 3,
+      "name": "Vanguard"
+    },
+    {
+      "id": 4,
+      "name": "Restoration"
+    }
+  ],
+  "questTypes": [
+    {
+      "id": 0,
+      "name": "Protection",
+      "baseXp": 14,
+      "baseGold": 16,
+      "questNames": [
+        "Protect the Convoy to <LOCATION>",
+        "Defend the Lord of <LOCATION>",
+        "Repel <MONSTER> Attack on <LOCATION>"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Subjugation",
+      "baseXp": 20,
+      "baseGold": 10,
+      "questNames": [
+        "Defeat <MONSTER> at <LOCATION>",
+        "Exterminate <MONSTER_GROUP> at <LOCATION>",
+        "Slay <MONSTER_GROUP> at <LOCATION>"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Retrieval",
+      "baseXp": 7,
+      "baseGold": 23,
+      "questNames": [
+        "Retrieve <RET_ITEM> from <MONSTER_GROUP>",
+        "Recover <RET_ITEM>"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Assassination",
+      "baseXp": 12,
+      "baseGold": 18,
+      "questNames": [
+        "Assassinate <TARGET> at <LOCATION>",
+        "Neutralize <TARGET> at <LOCATION>"
+      ]
+    }
+  ]
+
+ }

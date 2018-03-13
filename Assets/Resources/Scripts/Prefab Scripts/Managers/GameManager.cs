@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour {
 	public static Guild guild;
 	int weekCounter;
     static GameManager gameManager;
-    static JsonManager jsonManager;
+    static DataManager dataManager;
 
 	public GameObject thisWeek;
 	public GameObject questBoard;
@@ -14,8 +14,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameManager = this;
-        jsonManager = JsonManager.getInstance();
-        jsonManager.init();
+        dataManager = DataManager.getInstance();
 		guild = new Guild ();
 		weekCounter = 0;
 		NextTurn ();

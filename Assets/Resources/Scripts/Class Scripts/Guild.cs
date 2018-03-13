@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Guild {
-	ArrayList characters;
+    List<Character> characters;
 	int funds;
 
 	public Guild() {
-		characters = new ArrayList ();
+		characters = new List<Character>();
 		funds = 0;
 		MakeTestChars ();
 	}
@@ -18,7 +18,7 @@ public class Guild {
 		characters.Add (new Character ("justin", CharacterClass.getClass(Constants.CLASS_Warrior)));
 	}
 
-	public ArrayList getCharacters() {
+	public List<Character> getCharacters() {
 		return characters;
 	}
 		

@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class CharacterSelect : MonoBehaviour {
     public GameObject characterSlot;
-	ArrayList characters;
-	ArrayList characterSlots;
+	List<Character> characters;
+	List<GameObject> characterSlots;
 	int currentPageIdx; //each page holds Const.NUM_CHARS_PER_PAGE characters
 
     public void Refresh() {
         this.characters = null;
-        this.characterSlots = new ArrayList();
+        this.characterSlots = new List<GameObject>();
         this.currentPageIdx = 0;
         Transform[] children = gameObject.GetComponentsInChildren<Transform>();
         GameObject characterSlotsObject = transform.Find("CharacterSlots").gameObject;
@@ -25,7 +25,7 @@ public class CharacterSelect : MonoBehaviour {
         UpdateSlots();
     }
 
-	ArrayList GetCharactersFromCurrentPage() {
+    List<Character> GetCharactersFromCurrentPage() {
 		int startIdx = 1 * currentPageIdx;
         int count = Constants.NUM_CHARS_PER_PAGE;
         //if there is less than NUM_CHARS_PER_PAGE on this page, only get that many characters
@@ -36,7 +36,7 @@ public class CharacterSelect : MonoBehaviour {
 	}
 
 	void UpdateSlots() {
-		ArrayList charactersInPage = GetCharactersFromCurrentPage ();
+        List<Character> charactersInPage = GetCharactersFromCurrentPage ();
         for (int i = 0 ; i < charactersInPage.Count; i++) {
 			Character thisCharacter = (Character) charactersInPage [i];
 			GameObject thisSlot = (GameObject) characterSlots [i];
