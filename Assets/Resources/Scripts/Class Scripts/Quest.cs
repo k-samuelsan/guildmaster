@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,25 @@ public class Quest {
     public Quest() { }
 
     public Quest(int guildRating) {
+        QuestManager questManager = DataManager.getInstance().questManager;
+        int numRanks = questManager.ranks.Count;
+        if (guildRating == Constants.MAX_GUILD_RATING)
+        {
+            rankId = numRanks - 1;
+        }
+        else
+        {
+            int interval = Constants.MAX_GUILD_RATING / numRanks;
+            rankId = guildRating / interval;
+        }
+        Rank rank = questManager.ranks[rankId];
+        questTypeId = questManager.GetRandomQuestTypeId();
+        QuestType questType = questManager.questTypes[questTypeId];
+        goldReward = (int)((Convert.ToDouble(questType.baseGold)) * rank.modifier);
+        xpReward = (int)((Convert.ToDouble(questType.baseXp)) * rank.modifier);
+        obstacleIds = questManager.GetRandomObstacleIds(rank.numObstacles);
+        requiredSkillIds = questManager.GetRandomRequiredSkillIds(rank.numRequiredSkills);
+        
 
     }
 }

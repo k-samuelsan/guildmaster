@@ -2,35 +2,59 @@
   "ranks": [
     {
       "id": 0,
-      "name": "F"
+      "name": "F",
+      "modifier": 1,
+      "numObstacles": 0,
+      "numRequiredSkills":  1
     },
     {
       "id": 1,
-      "name": "E"
+      "name": "E",
+      "modifier": 2,
+      "numObstacles": 1,
+      "numRequiredSkills": 2
     },
     {
       "id": 2,
-      "name": "D"
+      "name": "D",
+      "modifier": 5,
+      "numObstacles": 2,
+      "numRequiredSkills": 2
     },
     {
       "id": 3,
-      "name": "C"
+      "name": "C",
+      "modifier": 10,
+      "numObstacles": 2,
+      "numRequiredSkills": 3
     },
     {
       "id": 4,
-      "name": "B"
+      "name": "B",
+      "modifier": 25,
+      "numObstacles": 3,
+      "numRequiredSkills": 4
     },
     {
       "id": 5,
-      "name": "A"
+      "name": "A",
+      "modifier": 50,
+      "numObstacles": 3,
+      "numRequiredSkills": 5
     },
     {
       "id": 6,
-      "name": "S"
+      "name": "S",
+      "modifier": 100,
+      "numObstacles": 4,
+      "numRequiredSkills": 6
     },
     {
       "id": 7,
-      "name": "SS"
+      "name": "SS",
+      "modifier": 250,
+      "numObstacles": 5,
+      "numRequiredSkills": 8
     }
   ],
   "obstacles": [

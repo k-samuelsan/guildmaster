@@ -9,4 +9,6 @@ public class Constants {
 
 	public const int NUM_CHARS_PER_PAGE = 10;
     public const int NUM_CHARS_PER_QUEST = 5;
+
+    public const int MAX_GUILD_RATING = 350;
 }
