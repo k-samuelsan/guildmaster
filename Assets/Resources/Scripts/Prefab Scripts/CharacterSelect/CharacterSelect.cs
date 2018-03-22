@@ -21,7 +21,7 @@ public class CharacterSelect : MonoBehaviour {
             thisSlot.transform.SetParent(characterSlotsObject.transform);
             characterSlots.Add(thisSlot);
         }
-        characters = GameManager.guild.getCharacters();
+        characters = GameManager.guild.GetCharacters();
         UpdateSlots();
     }
 

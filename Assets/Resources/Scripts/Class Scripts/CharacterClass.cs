@@ -14,6 +14,6 @@ public class CharacterClass {
     }
 
     public static CharacterClass getClass(int id) {
-        return DataManager.getInstance().classDatabase[id];
+        return DataManager.GetInstance().classDatabase[id];
     }
 }

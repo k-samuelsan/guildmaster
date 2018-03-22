@@ -8,6 +8,7 @@ public class DataManager {
     static DataManager dataManager;
     public QuestManager questManager;
     public List<CharacterClass> classDatabase = new List<CharacterClass>();
+    public Dictionary<string, List<string>> keywordDatabase = new Dictionary<string, List<string>>();
 
     private DataManager() {
         ConstructClassDB();
@@ -27,7 +28,7 @@ public class DataManager {
         }
     }
 
-    public static DataManager getInstance() {
+    public static DataManager GetInstance() {
         if (dataManager == null) {
             dataManager = new DataManager();
         }

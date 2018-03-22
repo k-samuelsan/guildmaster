@@ -11,4 +11,5 @@ public class Constants {
     public const int NUM_CHARS_PER_QUEST = 5;
 
     public const int MAX_GUILD_RATING = 350;
+    public const int BASE_QUESTS_PER_WEEK = 3;
 }

@@ -3,14 +3,16 @@ using System.Collections.Generic;
 
 public class Rank {
     public string name;
-    public double modifier;
+    public int modifier;
     public int numObstacles;
     public int numRequiredSkills;
+    public int baseDuration;
 
-    Rank(string name, double modifier, int numObstacles, int numRequiredSkills) {
+    public Rank(string name, int modifier, int numObstacles, int numRequiredSkills, int baseDuration) {
         this.name = name;
         this.modifier = modifier;
         this.numObstacles = numObstacles;
         this.numRequiredSkills = numRequiredSkills;
+        this.baseDuration = baseDuration;
     }
 }

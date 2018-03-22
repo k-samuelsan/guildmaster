@@ -13,19 +13,16 @@ public class Quest {
     List<int> obstacleIds;
     List<int> requiredSkillIds;
     int duration;
-    int energyCost;
+ //   int energyCost;
 
     public Quest() { }
 
     public Quest(int guildRating) {
-        QuestManager questManager = DataManager.getInstance().questManager;
+        QuestManager questManager = DataManager.GetInstance().questManager;
         int numRanks = questManager.ranks.Count;
-        if (guildRating == Constants.MAX_GUILD_RATING)
-        {
+        if (guildRating == Constants.MAX_GUILD_RATING) {
             rankId = numRanks - 1;
-        }
-        else
-        {
+        } else {
             int interval = Constants.MAX_GUILD_RATING / numRanks;
             rankId = guildRating / interval;
         }
@@ -36,7 +33,7 @@ public class Quest {
         xpReward = (int)((Convert.ToDouble(questType.baseXp)) * rank.modifier);
         obstacleIds = questManager.GetRandomObstacleIds(rank.numObstacles);
         requiredSkillIds = questManager.GetRandomRequiredSkillIds(rank.numRequiredSkills);
-        
-
+        duration = rank.baseDuration;
+        questName = questType.GetRandomQuestName(DataManager.GetInstance().keywordDatabase);
     }
 }
